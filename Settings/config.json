@@ -1,0 +1,22 @@
+{
+    "VipGarage": {
+        "contract_address": "0x069140520f5F81A2af1f465591E6E673c474d4b4",
+        "chain": "bnb",
+        "name": "VipGarage",
+        "previous_execution_dune_timestamp": 1698147765
+    },
+    "HogwardsOnline": {
+        "contract_address": "0x0a928147667879d024cAd8D7E384CCE828B7B3E7",
+        "chain": "bnb",
+        "name": "HogwardsOnline",
+        "previous_execution_dune_timestamp": 1698152845
+    },
+    "LamonReboot": {
+        "contract_address": "0xfEA20421C1C73a451b7c0D5A4414aC14e63e0414",
+        "chain": "bnb",
+        "name": "LamonReboot",
+        "previous_execution_dune_timestamp": 1698196710
+    },
+    "database_update_frequency_seconds": 14400,
+    "timezone_offset": 10
+}
