@@ -1,3 +1,4 @@
+import json
 import os
 from dotenv import load_dotenv
 from Modules import DatabaseManager, Config
@@ -14,7 +15,7 @@ def main():
     config = Config(config_file_path=config_path)
     is_internet_connection = check_internet_connection()
 
-    project_name = "LamonReboot"
+    project_name = "VipGarage"
     config = config.get(project_name)
 
     database_manager = DatabaseManager(config=config, internet_connection=is_internet_connection)
@@ -37,7 +38,6 @@ def main():
     for transaction in database_manager.get_transactions():
         _statistics.fetch_transaction(transaction)
     _statistics.print_analytics()
-
 
 
 

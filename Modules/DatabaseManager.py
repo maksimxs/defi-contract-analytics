@@ -1,4 +1,3 @@
-import datetime
 import sqlite3
 import time
 from dune_client.types import QueryParameter
