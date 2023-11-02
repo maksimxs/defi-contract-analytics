@@ -3,20 +3,26 @@
         "contract_address": "0x069140520f5F81A2af1f465591E6E673c474d4b4",
         "chain": "bnb",
         "name": "VipGarage",
-        "previous_execution_dune_timestamp": 1698320893
+        "previous_execution_dune_timestamp": 1698922941
     },
     "HogwardsOnline": {
         "contract_address": "0x0a928147667879d024cAd8D7E384CCE828B7B3E7",
         "chain": "bnb",
         "name": "HogwardsOnline",
-        "previous_execution_dune_timestamp": 1698215623
+        "previous_execution_dune_timestamp": 1698922954
     },
     "LamonReboot": {
         "contract_address": "0xfEA20421C1C73a451b7c0D5A4414aC14e63e0414",
         "chain": "bnb",
         "name": "LamonReboot",
-        "previous_execution_dune_timestamp": 1698320435
+        "previous_execution_dune_timestamp": 1698883553
     },
-    "database_update_frequency_seconds": 14400,
+    "StreetVendor": {
+        "contract_address": "0xc27B094EcA1687c1025a6292169303Cb8803abd3",
+        "chain": "bnb",
+        "name": "StreetVendor",
+        "previous_execution_dune_timestamp": 1698923479
+    },
+    "database_update_frequency_seconds": 3600,
     "timezone_offset": 10
 }

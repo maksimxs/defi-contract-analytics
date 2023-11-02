@@ -1,0 +1,24 @@
+# 2023 11.02 18:11:30
+Dune: 29.8582199216 BNB | Chain: 29.546153537 BNB | Difference: 0.3120663846 BNB
+
+Not invested money: 0.263144 BNB
+Total Earned: 3.371146 BNB
+Total lost profit: 1.208193 BNB
+
+Nature Daily: 0.826248 BNB
+
+Predict: 34.97549227 Days / Payback: 112.44620764805 %
+
+
+# 2023 11.02 21:35:20
+Dune: 38.633725537 BNB | Chain: 38.633725537 BNB | Difference: 0 BNB
+
+Not invested money: 0.296367 BNB
+Total Earned: 3.548332 BNB
+Total lost profit: 1.238865 BNB
+
+Nature Daily: 1.143456 BNB
+
+Predict: 33.23508079 Days / Payback: 106.85078473985 %
+
+

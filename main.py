@@ -2,7 +2,7 @@ import json
 import os
 from dotenv import load_dotenv
 from Modules import DatabaseManager, Config
-from Modules.Statistics import VipGarage, HogwardsOnline, LamonReboot
+from Modules.Statistics import VipGarage, HogwardsOnline, LamonReboot, StreetVendor
 from project_utils import configuration_validate, check_internet_connection
 
 config_folder = "Settings"
@@ -14,30 +14,38 @@ def main():
     configuration_validate()
     config = Config(config_file_path=config_path)
     is_internet_connection = check_internet_connection()
+    load_dotenv()
 
-    project_name = "VipGarage"
-    config = config.get(project_name)
+    project_names = ["VipGarage", "HogwardsOnline", "LamonReboot", "StreetVendor"]
+    project_names = ["StreetVendor"]
 
-    database_manager = DatabaseManager(config=config, internet_connection=is_internet_connection)
+    for project_name in project_names:
+        print("="*25, "\n", project_name)
+        temp_config = config.get(project_name)
 
-    if is_internet_connection:
-        load_dotenv()
-        database_manager.sync_database()
-    else:
-        print("[-] No internet connection -> passing sync database")
+        database_manager = DatabaseManager(config=temp_config, internet_connection=is_internet_connection)
 
-    if project_name == "VipGarage":
-        _statistics = VipGarage()
-    elif project_name == "HogwardsOnline":
-        _statistics = HogwardsOnline()
-    elif project_name == "LamonReboot":
-        _statistics = LamonReboot()
-    else:
-        1/0
+        if is_internet_connection:
+            pass
+            database_manager.sync_database()
+        else:
+            print("[-] No internet connection -> passing sync database")
 
-    for transaction in database_manager.get_transactions():
-        _statistics.fetch_transaction(transaction)
-    _statistics.print_analytics()
+        if project_name == "VipGarage":
+            _statistics = VipGarage()
+        elif project_name == "HogwardsOnline":
+            _statistics = HogwardsOnline()
+        elif project_name == "LamonReboot":
+            _statistics = LamonReboot()
+        elif project_name == "StreetVendor":
+            _statistics = StreetVendor()
+        else:
+            1/0
+
+        for transaction in database_manager.get_transactions():
+            _statistics.fetch_transaction(transaction)
+        _statistics.print_analytics()
+
 
 
 
