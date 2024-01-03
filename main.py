@@ -2,7 +2,7 @@ import json
 import os
 from dotenv import load_dotenv
 from Modules import DatabaseManager, Config
-from Modules.Statistics import VipGarage, HogwardsOnline, LamonReboot, StreetVendor
+from Modules.Statistics import VipGarage, HogwardsOnline, StreetVendor, SmartGarage
 from project_utils import configuration_validate, check_internet_connection
 
 config_folder = "Settings"
@@ -16,8 +16,9 @@ def main():
     is_internet_connection = check_internet_connection()
     load_dotenv()
 
-    project_names = ["VipGarage", "HogwardsOnline", "LamonReboot", "StreetVendor"]
-    project_names = ["StreetVendor"]
+    project_names = ["HogwardsOnline", "StreetVendor", "SmartGarage"]
+    # project_names = []
+    # project_names = ["StreetVendor"]
 
     for project_name in project_names:
         print("="*25, "\n", project_name)
@@ -35,10 +36,10 @@ def main():
             _statistics = VipGarage()
         elif project_name == "HogwardsOnline":
             _statistics = HogwardsOnline()
-        elif project_name == "LamonReboot":
-            _statistics = LamonReboot()
         elif project_name == "StreetVendor":
             _statistics = StreetVendor()
+        elif project_name == "SmartGarage":
+            _statistics = SmartGarage()
         else:
             1/0
 

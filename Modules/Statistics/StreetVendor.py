@@ -266,7 +266,7 @@ class StreetVendor(BaseStatistics):
         result_message += f"\n\nNature Daily: {nature_daily / int(1e6)} BNB"
 
         day_alive = (real_contract_balance - ((not_invested + wait_claim) * int(1e12))) / (nature_daily * int(1e12))
-        result_message += f"\n\nPredict: {day_alive.quantize(decimal.Decimal('0.00000001'))} Days / Payback: {day_alive.quantize(decimal.Decimal('0.00000001')) * (319+324)/2 / 100} %"
+        result_message += f"\n\nPredict: {day_alive.quantize(decimal.Decimal('0.00000001'))} Days / Payback: {day_alive.quantize(decimal.Decimal('0.00000001')) * (319+324+394)/3 / 100} %"
 
         result_message += "\n\n\n"
         print(result_message)

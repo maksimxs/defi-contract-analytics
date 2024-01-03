@@ -236,8 +236,8 @@ class HogwardsOnline(BaseStatistics):
 
         updateFrozen = 0 if self.user[_msgSender]["frozen"] <= amount else self.user[_msgSender]["frozen"] - amount
         self.user[_msgSender]["frozen"] = updateFrozen
-        if self.user[_msgSender]["money"] - amount < 0:
-            print(1)
+        # if self.user[_msgSender]["money"] - amount < 0:
+        #     print(1)
         self.user[_msgSender]["money"] -= amount
         self.user[_msgSender]["deposit"] += amount
         self.user[_msgSender]["timestamp"] = transaction["block_timestamp"]
@@ -377,7 +377,7 @@ class HogwardsOnline(BaseStatistics):
     def __fetch_createBattle(self, transaction):
         _msgSender = transaction["from"]
 
-        battleType = int(transaction["data"][64:], 16)
+        battleType = int(transaction["data"][64*0:64*1], 16)
 
         Creator = self.waiting_battles[battleType]
         if Creator == NULL_ADDRESS:
@@ -484,7 +484,7 @@ class HogwardsOnline(BaseStatistics):
         function_name = function_signatures.get(signature, "UnknownFunction")
         return function_name
 
-    def __get_battle_roll(self, creator, battleType, block_number):
+    def __get_battle_roll(self, battleType, creator, block_number):
         block_number = block_number + 1
         key = f"{creator}_{battleType}_{block_number}"
         roll = self.__battle_rolls.get(key, None)

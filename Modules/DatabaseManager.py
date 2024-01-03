@@ -116,17 +116,19 @@ class DatabaseManager:
     def __run_query_dune(self, query, performance="medium"):
         dune = DuneClient.from_env()
 
-        try:
-            results = dune.get_latest_result(query=query)
-            if results.state is models.ExecutionState.EXECUTING:
-                raise ValueError("Still executing")
-        except models.DuneError:
-            results = dune.run_query(query=query, performance=performance)
+        results = dune.run_query(query=query, performance=performance)
         executed_timestamp = int(results.times.execution_started_at.timestamp())
-
-        if executed_timestamp == self.config.get("previous_execution_dune_timestamp"):
-            results = dune.run_query(query=query, performance=performance)
-        else:
-            print("RETURN LATEST RESULT")
+        # try:
+        #     results = dune.get_latest_result(query=query)
+        #     if results.state is models.ExecutionState.EXECUTING:
+        #         raise ValueError("Still executing")
+        # except models.DuneError:
+        #     results = dune.run_query(query=query, performance=performance)
+        # executed_timestamp = int(results.times.execution_started_at.timestamp())
+        #
+        # if executed_timestamp == self.config.get("previous_execution_dune_timestamp"):
+        #     results = dune.run_query(query=query, performance=performance)
+        # else:
+        #     print("RETURN LATEST RESULT")
 
         return results, executed_timestamp
